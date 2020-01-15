@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Running CentOS Moxa Driver Installer 0.0.1"
 
 # root check
@@ -6,10 +7,8 @@ then
 	echo "Please run as root"
 
 	read -r -p "Proceed anyway? [y/N] " response
-	if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
+	if [[ ! "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
 	then
-		# do nothing
-	else
 		exit
 	fi
 fi
@@ -76,7 +75,7 @@ then
 fi
 
 # ./mxinst
-read -rsp $"Press any key to install the driver (runs './mxinst')\n" -n 1 key
+read -rsp $"Press any key to install the driver (runs './mxinst')" -n 1 key
 echo "Installing..."
 
 status=$?
