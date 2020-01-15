@@ -8,7 +8,7 @@ Praktikum im Bereich POS beim ZDF Mainz (2020)
 
 ### Anleitung
 ```console
-root@server:~$ https://raw.githubusercontent.com/vincentscode/Praktikum-ZDF-Mainz/master/install_moxa_driver_centos.sh | bash
+root@server:~$ curl https://raw.githubusercontent.com/vincentscode/Praktikum-ZDF-Mainz/master/install_moxa_driver_centos.sh | bash
 Running CentOS Moxa Driver Installer 0.0.1
 ...
 
