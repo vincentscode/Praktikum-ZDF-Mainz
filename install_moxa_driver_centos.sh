@@ -2,8 +2,16 @@ echo "Running CentOS Moxa Driver Installer 0.0.1"
 
 # root check
 if [ "$EUID" -ne 0 ]
-	then echo "Please run as root"
-	exit
+then
+	echo "Please run as root"
+
+	read -r -p "Proceed anyway? [y/N] " response
+	if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
+	then
+		# do nothing
+	else
+		exit
+	fi
 fi
 
 # download the driver into /tmpt/moxa/
