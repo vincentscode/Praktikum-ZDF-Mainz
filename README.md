@@ -15,3 +15,6 @@ Running CentOS Moxa Driver Installer 0.0.1
 
 root@server:~$ reboot now
 ```
+
+#### Notizen
+.c Anpassung bzgl. access_ok override if abfrage

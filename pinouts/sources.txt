@@ -1,0 +1,2 @@
+RS 422 Port: http://www.brainboxes.com/product/uc-368/4-port-rs422-485-pci-serial-port-card-with-opto-isolation
+NPort 5650: http://support.elmark.com.pl/moxa/products/Serwery_portow_szeregowych/NPort_5600/manual/NPort_5610_5630_5650_QIG_v2.pdf
