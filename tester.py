@@ -7,6 +7,8 @@ import serial.tools.list_ports
 import sys
 from datetime import datetime
 import math
+import os
+import json
 
 window = Tk()
 window.title("Tester")
@@ -15,8 +17,18 @@ command_options = ["HH:mmDD.MM", "SC:SCSC.SC", "UC:UCUC.UC", "LC:LCLC.LC"]
 running = False
 debug = False
 
+if os.path.exists("config.json"):
+    cfg_f = open("config.json")
+    cfg = json.loads(cfg_f.read())
+    cfg_f.close()
+else:
+    cfg = {
+        'before': '',
+        'after': '\r'
+    }
+
 # create elements
-ent_time_lbl = Label(window, text="Interval:")
+ent_time_lbl = Label(window, text="Interval (s):")
 ent_time_var = StringVar(window)
 ent_time = Entry(window, textvariable=ent_time_var)
 lbx_commands_lbl = Label(window, text="Befehl:")
@@ -48,8 +60,8 @@ else:
         def __init__(self, serial_port):
             self.serial_port = serial_port
         def write(self, msg):
-            before = ""
-            after = "\r"
+            before = cfg["before"]
+            after = cfg["after"]
             msg = bytes(before + msg + after, "ascii")
             
             print("Sending:", msg)
